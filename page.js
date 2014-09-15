@@ -13,21 +13,26 @@ $( document ).ready(function() {
     }
   xmlhttp.onreadystatechange=function()
     {
-    if (xmlhttp.readyState==4 && xmlhttp.status==200)
-      {
-      document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-      }
+    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+       document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+       window.myJSON = xmlhttp.responseText;
+       splitJSONintoObjects();
+    }
   }
   xmlhttp.open("GET","http://www.buzzfeed.com/buzzfeed/api/comments?buzz_id=3371338",true);
   xmlhttp.send();
   };
 
-  var splitJSONintoObjects = function() { 
 
+  var splitJSONintoObjects = function() { 
+  // alert(window.myJSON);
+  var allComments = JSON.parse(window.myJSON);
+  alert(allComments.success);
   }
 
 
 
 requestJSONfromAPI();
 
+//end jquery
 });
