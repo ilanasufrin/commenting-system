@@ -14,7 +14,7 @@ $( document ).ready(function() {
   xmlhttp.onreadystatechange=function()
     {
     if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-       document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+      // document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
        window.myJSON = xmlhttp.responseText;
        splitJSONintoObjects();
     }
@@ -26,10 +26,20 @@ $( document ).ready(function() {
 
   var splitJSONintoObjects = function() { 
   // alert(window.myJSON);
-  var allComments = JSON.parse(window.myJSON);
-  alert(allComments.success);
-  }
+    var wholeResponse = JSON.parse(window.myJSON);
+    var allComments = wholeResponse.comments;
+    //alert(allComments[0].badge_title);
+    for (var i = 0; i < allComments.length; i++) {
+      document.getElementById("myDiv").innerHTML += "<br/>"
+      for (var key in allComments[i]) {
+       if (allComments[i].hasOwnProperty(key)) {
+      document.getElementById("myDiv").innerHTML += (key + " -> " + allComments[i][key] + "<br/>");
+     //  console.log(key + " -> " + allComments[i][key]);
+      }
+    }
 
+  }
+}
 
 
 requestJSONfromAPI();
