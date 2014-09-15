@@ -1,29 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-function loadXMLDoc()
-{
-var xmlhttp;
-if (window.XMLHttpRequest)
-  {// code for IE7+, Firefox, Chrome, Opera, Safari
-  xmlhttp=new XMLHttpRequest();
-  }
-else
-  {// code for IE6, IE5
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-  }
-xmlhttp.onreadystatechange=function()
-  {
-  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-    {
-    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
-    }
-}
-xmlhttp.open("GET","http://www.buzzfeed.com/buzzfeed/api/comments?buzz_id=3371338",true);
-xmlhttp.send();
-}
-</script>
+
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" />
 <link href="page.css" rel="stylesheet">
 </head>
 <body>
@@ -31,9 +10,9 @@ xmlhttp.send();
 
 
 <div id="myDiv"></div>
-<script>
-loadXMLDoc();
-</script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
 <script src="page.js"></script>
 </body>
 </html>
