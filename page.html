@@ -9,7 +9,29 @@
 
 
 
-<div id="myDiv"></div>
+<div id="myDiv">
+<section id="responses" class="Contributions no-contributions bf_dom" rel:bf_bucket="gtrack" rel:gt_cat="Buzz:contributions">
+
+  
+  <header class="header-menu" id="number_of_contribs_header" >
+    <ul class="title">
+      <li class="current"><a rel:gt_act="filter/all" href="javascript:;" id="filter-show_everything">Contributions</a></li>
+      <input type="hidden" id="comments-pages" name="comments-pages"  value="2" />
+    </ul>
+  </header>
+
+  
+
+  
+  <ul class="contribution-list indented-mode" id="contribution-list"> </ul>
+  <div id="load-contributions" class="load-contributions">
+    <a class="bf_dom load-contrib-button button2 grey hidden" href="javascript:;" rel:bf_bucket="load_contributions" id="load-contrib-button">Load More Responses...</a> 
+    <img id="comments-spinner" class="load-spinner hidden" src="http://s3-ak.buzzfeed.com/static/images/public/spinners/big_on_white.gif?v=201409121621" />
+  </div> <!-- end load-contributions -->
+
+
+</section>
+</div> <!-- end myDiv -->
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
